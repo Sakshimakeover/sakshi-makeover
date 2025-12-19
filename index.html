@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi Makeover - Premium Beauty Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #c41e3a;
+            --secondary: #1a1a2e;
+            --accent: #ff6b9d;
+            --light-bg: #f5f0ed;
+            --text-dark: #0f0f0f;
+            --text-light: #555;
+            --gold: #c41e3a;
+            --rose: #ff6b9d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(180deg, #f8f5f2 0%, #faf9f7 50%, #f5f2f0 100%);
+            background-attachment: fixed;
+        }
+
+        /* ===== NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .book-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .book-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 165, 116, 0.3);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #fdf8f5 0%, #faf6f3 50%, #f5f0ed 100%);
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(196, 30, 58, 0.15);
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #fefdfb 0%, #fcfaf8 100%);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* ===== PORTFOLIO SECTION ===== */
+        .portfolio {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .portfolio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.02);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #fefdfb 0%, #fcfaf8 100%);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .team-member-img {
+            width: 100%;
+            max-width: 280px;
+            height: 280px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.2);
+        }
+
+        .team-member h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .stars {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #fefdfb 0%, #fcfaf8 100%);
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            border: 2px solid var(--light-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(212, 165, 116, 0.2);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-color: transparent;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pricing-title {
+            font-size: 1.8rem;
+            margin: 1.5rem 0 1rem;
+            font-weight: 700;
+        }
+
+        .pricing-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .pricing-amount span {
+            font-size: 1.2rem;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin: 2rem 0;
+            list-style: none;
+        }
+
+        .pricing-features li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card.featured .pricing-features li {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ===== BOOKING SECTION ===== */
+        .booking {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+        }
+
+        .booking-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .booking h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .booking p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .booking-form input,
+        .booking-form select,
+        .booking-form textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .booking-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .booking-form button {
+            background: var(--secondary);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .booking-form button:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            min-width: 30px;
+        }
+
+        .contact-details h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin: 0.5rem 0;
+        }
+
+        .footer-section ul a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: scale(1) translateY(-10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0 1rem;
+            }
+
+            .nav-menu {
+                gap: 0.5rem;
+            }
+
+            .nav-menu a {
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                margin-top: 80px;
+                padding: 2rem 1rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .services-grid,
+            .portfolio-grid,
+            .team-grid,
+            .testimonial-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo">
+                <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/617014d4-cd50-4df3-9807-d2b179d13bc6" alt="Sakshi Makeover Logo">
+                <span>Sakshi Makeover</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="book-btn" onclick="scrollToBooking()">Book Now</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Elevate Your Beauty Game</h1>
+                <p>Discover premium makeup, styling, and beauty services at Sakshi Makeover. Transform your look, boost your confidence.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToBooking()">Book Appointment</button>
+                    <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView()">Explore Services</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/617014d4-cd50-4df3-9807-d2b179d13bc6" alt="Sakshi Makeover - Premium Beauty Studio" style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 60px rgba(196, 30, 58, 0.2);">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Premium Services</h2>
+        <p class="section-subtitle">Tailored beauty solutions for every occasion</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💄</div>
+                <h3>Bridal Makeup</h3>
+                <p>Flawless, long-lasting makeup for your special day. Perfect for weddings and engagements.</p>
+                <p class="service-price">₹2,500 - ₹5,000</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Party Makeup</h3>
+                <p>Trendy and bold looks for parties, events, and celebrations. Stand out from the crowd.</p>
+                <p class="service-price">₹1,000 - ₹2,500</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👰</div>
+                <h3>Engagement Makeup</h3>
+                <p>Elegant and sophisticated makeup for your engagement ceremony. Make a lasting impression.</p>
+                <p class="service-price">₹2,000 - ₹4,000</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💇</div>
+                <h3>Hair & Makeup</h3>
+                <p>Complete beauty transformation with professional hair styling and makeup coordination.</p>
+                <p class="service-price">₹3,000 - ₹6,000</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👗</div>
+                <h3>Fashion Event Makeup</h3>
+                <p>High-fashion makeup for photoshoots, modeling, and fashion events. Professional results.</p>
+                <p class="service-price">₹1,500 - ₹3,500</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3>Makeup Consultation</h3>
+                <p>One-on-one personalized consultation for makeup techniques and skincare tips.</p>
+                <p class="service-price">₹500 - ₹1,000</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-container">
+            <h2 class="section-title">Our Gallery</h2>
+            <p class="section-subtitle">Before & After Transformations</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ffd89b, #19547b); display: flex; align-items: center; justify-content: center; font-size: 5rem;">💍</div>
+                    <div class="portfolio-overlay">Bridal Look</div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #fbc2eb, #a6c0fe); display: flex; align-items: center; justify-content: center; font-size: 5rem;">💎</div>
+                    <div class="portfolio-overlay">Evening Glam</div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #f093fb, #f5576c); display: flex; align-items: center; justify-content: center; font-size: 5rem;">🌟</div>
+                    <div class="portfolio-overlay">Party Ready</div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #4facfe, #00f2fe); display: flex; align-items: center; justify-content: center; font-size: 5rem;">✨</div>
+                    <div class="portfolio-overlay">Professional Look</div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #43e97b, #38f9d7); display: flex; align-items: center; justify-content: center; font-size: 5rem;">👑</div>
+                    <div class="portfolio-overlay">Engagement</div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #fa709a, #fee140); display: flex; align-items: center; justify-content: center; font-size: 5rem;">🎀</div>
+                    <div class="portfolio-overlay">Soft Glam</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team" id="team">
+        <h2 class="section-title">Meet Our Team</h2>
+        <p class="section-subtitle">Talented beauty professionals dedicated to perfecting your look</p>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-member-img">👩‍🦰</div>
+                <h3>Sakshi Sharma</h3>
+                <p>Lead Makeup Artist</p>
+                <p style="font-size: 0.9rem; color: #999;">Expert in bridal and fashion makeup with 8+ years experience</p>
+            </div>
+            <div class="team-member">
+                <div class="team-member-img">💄</div>
+                <h3>Priya Verma</h3>
+                <p>Professional Stylist</p>
+                <p style="font-size: 0.9rem; color: #999;">Specializing in party and event makeup transformations</p>
+            </div>
+            <div class="team-member">
+                <div class="team-member-img">✨</div>
+                <h3>Aisha Patel</h3>
+                <p>Beauty Consultant</p>
+                <p style="font-size: 0.9rem; color: #999;">Personalized beauty advice and skincare expert</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Real stories from happy customers</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Sakshi did my wedding makeup and I felt absolutely gorgeous! The makeup lasted the entire day without any touch-ups needed."</p>
+                    <p class="testimonial-author">- Neha Singh</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Professional, creative, and highly attentive to detail. They understood exactly what I wanted and delivered beyond expectations!"</p>
+                    <p class="testimonial-author">- Ananya Kumar</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Best makeup artist in Haryana! The team is friendly, hygienic, and uses premium quality products. Highly recommended!"</p>
+                    <p class="testimonial-author">- Pooja Gupta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-container">
+            <h2 class="section-title">Our Pricing Plans</h2>
+            <p class="section-subtitle">Transparent pricing for all services</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Basic Package</h3>
+                    <div class="pricing-amount">₹999<span>/session</span></div>
+                    <ul class="pricing-features">
+                        <li>✓ Simple Makeup</li>
+                        <li>✓ Professional Application</li>
+                        <li>✓ 1 Makeup Look</li>
+                        <li>✓ Touch-up Kit Included</li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">MOST POPULAR</div>
+                    <h3 class="pricing-title">Premium Package</h3>
+                    <div class="pricing-amount">₹2,499<span>/session</span></div>
+                    <ul class="pricing-features">
+                        <li>✓ Advanced Makeup</li>
+                        <li>✓ Multiple Look Options</li>
+                        <li>✓ Hair Styling</li>
+                        <li>✓ Extended Duration</li>
+                        <li>✓ Professional Photography</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Bridal Package</h3>
+                    <div class="pricing-amount">₹4,999<span>/session</span></div>
+                    <ul class="pricing-features">
+                        <li>✓ Luxury Makeup</li>
+                        <li>✓ Hair Styling & Design</li>
+                        <li>✓ Full Day Coordination</li>
+                        <li>✓ Makeup Trial Included</li>
+                        <li>✓ Premium Products Only</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section class="booking" id="booking">
+        <div class="booking-container">
+            <h2>Ready to Transform?</h2>
+            <p>Book your appointment now and let our experts bring out your best self!</p>
+            <form class="booking-form" onsubmit="handleBooking(event)">
+                <input type="text" placeholder="Your Full Name" required>
+                <input type="email" placeholder="Your Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Select Service</option>
+                    <option value="bridal">Bridal Makeup</option>
+                    <option value="party">Party Makeup</option>
+                    <option value="engagement">Engagement Makeup</option>
+                    <option value="hair">Hair & Makeup</option>
+                    <option value="fashion">Fashion Event</option>
+                    <option value="consultation">Consultation</option>
+                </select>
+                <input type="date" required>
+                <textarea placeholder="Special requirements or notes..."></textarea>
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="section-title" style="text-align: left; margin-top: 0;">Get In Touch</h2>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>Narniaund, Haryana, India</p>
+                        <p style="font-size: 0.9rem;">Our beautiful studio awaits you!</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p>+91-XXXXXXXXXX</p>
+                        <p style="font-size: 0.9rem;">Available 9AM - 9PM daily</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>info@sakshimakeover.com</p>
+                        <p style="font-size: 0.9rem;">We respond within 2 hours</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div class="contact-details">
+                        <h3>Hours</h3>
+                        <p>Monday - Sunday: 10AM - 9PM</p>
+                        <p style="font-size: 0.9rem;">Special appointments available</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="handleContact(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Your Message..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Sakshi Makeover</h4>
+                <p>Premium beauty studio offering professional makeup, styling, and beauty consultations for all occasions.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Gallery</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" title="Instagram">📸</a>
+                    <a href="#" title="Facebook">👍</a>
+                    <a href="#" title="WhatsApp">💬</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sakshi Makeover. All rights reserved. Launching December 15, 2024 | Narniaund, Haryana</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToBooking() {
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleBooking(e) {
+            e.preventDefault();
+            alert('Thank you for your booking! Our team will contact you within 2 hours to confirm your appointment.');
+            e.target.reset();
+        }
+
+        function handleContact(e) {
+            e.preventDefault();
+            alert('Message sent successfully! We will get back to you soon.');
+            e.target.reset();
+        }
+
+        // Smooth scroll enhancement
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add active state to nav items on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.color = 'var(--primary)';
+                } else {
+                    link.style.color = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
