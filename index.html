@@ -109,6 +109,85 @@
             box-shadow: 0 5px 20px rgba(212, 165, 116, 0.3);
         }
 
+          /* ===== CAROUSEL/SLIDER SECTION ===== */
+        .carousel-section {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #fdf8f5 0%, #faf6f3 50%, #f5f0ed 100%);
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(196, 30, 58, 0.15);
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+            height: 400px;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .carousel-slide-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .dot.active {
+            background: white;
+            width: 30px;
+            border-radius: 6px;
+        }
+        
         /* ===== HERO SECTION ===== */
         .hero {
             margin-top: 70px;
@@ -559,14 +638,25 @@
         .contact-details p {
             color: var(--text-light);
         }
- .map-container iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 400px;
-      border: none;
-      border-radius: 8px;
-    }
-       
+
+        .map-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
         /* ===== FOOTER ===== */
         footer {
@@ -670,6 +760,13 @@
             .pricing-card.featured:hover {
                 transform: scale(1) translateY(-10px);
             }
+            .carousel-wrapper {
+                height: 300px;
+            }
+
+            .carousel-slide {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -715,6 +812,13 @@
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
+            .carousel-wrapper {
+                height: 250px;
+            }
+
+            .carousel-slide {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -738,6 +842,43 @@
         </nav>
     </header>
 
+      <!-- CAROUSEL/SLIDER SECTION -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-wrapper" id="carouselWrapper">
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="carousel-slide-content">
+                        <div>✨ Bridal Excellence ✨</div>
+                        <p style="font-size: 1.2rem; margin-top: 1rem; opacity: 0.9;">Premium Wedding Makeup</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="carousel-slide-content">
+                        <div>💎 Party Glam 💎</div>
+                        <p style="font-size: 1.2rem; margin-top: 1rem; opacity: 0.9;">Trendy Event Makeup</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="carousel-slide-content">
+                        <div>👑 Engagement Ready 👑</div>
+                        <p style="font-size: 1.2rem; margin-top: 1rem; opacity: 0.9;">Elegant & Sophisticated</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="carousel-slide-content">
+                        <div>🌟 Professional Touch 🌟</div>
+                        <p style="font-size: 1.2rem; margin-top: 1rem; opacity: 0.9;">Hair & Makeup Combined</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots" id="carouselDots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+            </div>
+        </div>
+    </section>
     <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-content">
@@ -867,7 +1008,7 @@
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3 class="pricing-title">Basic Package</h3>
-                    <div class="pricing-amount">Starts ₹3999</span></div>
+                    <div class="pricing-amount">Starts from ₹3999</span></div>
                     <ul class="pricing-features">
                         <li>✓ Simple Makeup</li>
                         <li>✓ Professional Application</li>
@@ -889,7 +1030,7 @@
                 </div>
                 <div class="pricing-card">
                     <h3 class="pricing-title">Bridal Package</h3>
-                    <div class="pricing-amount">starts from ₹9,999<span>/session</span></div>
+                    <div class="pricing-amount">Starts from ₹9,999<span>/session</span></div>
                     <ul class="pricing-features">
                         <li>✓ Luxury Makeup</li>
                         <li>✓ Hair Styling & Design</li>
@@ -958,10 +1099,11 @@
                         <p style="font-size: 0.9rem;">Special appointments available</p>
                     </div>
                 </div>
-                <div class="container">
-                   <div class="map-container">
+            </div>
+                <div class="map-wrapper">
                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3586.3412387661315!2d79.4341580803061!3d25.989636918445388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDU5JzIyLjciTiA3OcKwMjYnMjAuNSJF!5e0!3m2!1sen!2sin!4v1749873431427!5m2!1sen!2sin" allowfullscreen loading="lazy"></iframe>
                </div>
+        </div>
     </section>
 
     <!-- FOOTER -->
@@ -995,6 +1137,33 @@
     </footer>
 
     <script>
+         // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            const wrapper = document.getElementById('carouselWrapper');
+            wrapper.style.transform = `translateX(-${n * 100}%)`;
+            
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance carousel every 5 seconds
+        setInterval(nextSlide, 5000);
+        
         function scrollToBooking() {
             document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
         }
